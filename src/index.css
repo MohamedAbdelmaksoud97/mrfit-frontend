@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 20% 95%;
+
+    --card: 222 40% 9%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 222 40% 9%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 215 25% 16%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 215 20% 14%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 217 91% 60%;
+    --accent-foreground: 222 47% 6%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 20% 95%;
+
+    --border: 215 20% 18%;
+    --input: 215 20% 18%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 222 40% 8%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 215 25% 14%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 215 20% 16%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* Custom tokens */
+    --electric: 217 91% 60%;
+    --electric-glow: 217 100% 70%;
+    --slate-dark: 222 47% 6%;
+    --slate-mid: 215 20% 14%;
+    --gradient-electric: linear-gradient(135deg, hsl(217 91% 60%), hsl(199 89% 48%));
+    --gradient-dark: linear-gradient(180deg, hsl(222 47% 6%), hsl(222 40% 9%));
+    --shadow-electric: 0 0 30px -5px hsl(217 91% 60% / 0.3);
+    --shadow-card: 0 4px 24px -4px hsl(0 0% 0% / 0.4);
+
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  }
+
+  .gradient-electric {
+    background: linear-gradient(135deg, hsl(217 91% 60%), hsl(199 89% 48%));
+  }
+
+  .gradient-electric-text {
+    background: linear-gradient(135deg, hsl(217 91% 60%), hsl(199 89% 48%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-electric {
+    box-shadow: 0 0 30px -5px hsl(217 91% 60% / 0.4);
+  }
+
+  .glass {
+    background: hsl(222 40% 9% / 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(215 20% 18% / 0.5);
+  }
+
+  .glass-card {
+    background: hsl(222 40% 9% / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(215 20% 20% / 0.4);
+  }
+}
