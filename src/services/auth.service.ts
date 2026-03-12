@@ -24,20 +24,22 @@ export const authService = {
   },
 
   updateProfile: async (payload: Record<string, unknown>) => {
-    const { data } = await api.put("/users/profile", payload);
+    const { data } = await api.patch("/users/update-profile", payload);
+    console.log("Profile updated:", data);
     return data;
   },
 
   updatePassword: async (currentPassword: string, newPassword: string) => {
-    const { data } = await api.put("/users/password", {
+    const { data } = await api.post("/users/update-password", {
       currentPassword,
       newPassword,
+      newPasswordConfirmation: newPassword,
     });
     return data;
   },
 
   forgotPassword: async (email: string) => {
-    const { data } = await api.post("/users/forgot-password", { email });
+    const { data } = await api.post("/users/forget-password", { email });
     return data;
   },
 
